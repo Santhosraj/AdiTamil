@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdiTamil</title>
+    <link rel="stylesheet" href="content.css">
+    <style>
+        :root {
+            --accent: #ea580c;
+            --bg: #0f172a;
+            --card: #111827;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: #1f2937;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            width: 360px;
+            min-height: 520px;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 0.2px;
+        }
+
+        header .tagline {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f97316, #f59e0b);
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .section h2 {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: #f8fafc;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            background: #0b1224;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            padding: 10px;
+            font-size: 13px;
+            transition: border 0.15s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: 2px solid rgba(234, 88, 12, 0.35);
+            border-color: #f97316;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            box-shadow: 0 12px 30px rgba(234, 88, 12, 0.35);
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 40px rgba(234, 88, 12, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--muted);
+            min-height: 16px;
+        }
+
+        .results {
+            display: grid;
+            gap: 10px;
+        }
+
+        .card {
+            background: #0b1224;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .card h3 {
+            margin: 0 0 6px;
+            color: #f8fafc;
+            font-size: 14px;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            background: rgba(234, 88, 12, 0.15);
+            border: 1px solid rgba(234, 88, 12, 0.35);
+            border-radius: 999px;
+            color: #f97316;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .link {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">ஆ</div>
+        <div>
+            <h1>AdiTamil</h1>
+            <div class="tagline">Tamil etymology on any page</div>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>API Key</h2>
+        <label for="apiKey">Gemini API key</label>
+        <div class="row">
+            <input type="text" id="apiKey" placeholder="AIza...">
+            <span class="badge" id="keyStatus">Not saved</span>
+        </div>
+        <div class="hint">Get a free key at <a class="link" href="https://aistudio.google.com/app/apikey"
+                target="_blank">Google AI Studio</a></div>
+        <div style="margin-top:10px; display:flex; gap:8px;">
+            <button id="saveKeyBtn" style="flex:1;">Save API Key</button>
+            <button id="clearKeyBtn" style="flex:1; background:#1f2937; box-shadow:none;">Clear</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Quick Analysis</h2>
+        <label for="quickText">Type or paste text</label>
+        <textarea id="quickText" placeholder="Paste text to analyze Tamil origins..."></textarea>
+        <div style="margin-top:10px;">
+            <button id="analyzeBtn">Analyze</button>
+        </div>
+        <div class="status" id="status"></div>
+    </section>
+
+    <section class="section">
+        <h2>Results</h2>
+        <div id="results" class="results"></div>
+        <div class="hint">Tip: You can also select text on a page and right-click → "Analyze with AdiTamil"</div>
+    </section>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

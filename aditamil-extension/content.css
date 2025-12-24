@@ -1,0 +1,114 @@
+:root {
+    --aditamil-accent: #ea580c;
+    --aditamil-bg: #0f172a;
+    --aditamil-card: #0b1224;
+    --aditamil-border: #1f2937;
+    --aditamil-text: #e5e7eb;
+    --aditamil-muted: #94a3b8;
+}
+
+.aditamil-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(420px, 90vw);
+    height: 100vh;
+    background: var(--aditamil-bg);
+    color: var(--aditamil-text);
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.45);
+    border-left: 1px solid var(--aditamil-border);
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 2147483646;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.aditamil-panel.visible {
+    transform: translateX(0);
+}
+
+.aditamil-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--aditamil-border);
+}
+
+.aditamil-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.aditamil-close {
+    background: transparent;
+    border: 1px solid var(--aditamil-border);
+    color: var(--aditamil-text);
+    border-radius: 999px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.aditamil-body {
+    overflow-y: auto;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+}
+
+.aditamil-card {
+    background: var(--aditamil-card);
+    border: 1px solid var(--aditamil-border);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.aditamil-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.aditamil-word {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.aditamil-confidence {
+    font-size: 12px;
+    color: var(--aditamil-muted);
+}
+
+.aditamil-etymology {
+    font-size: 13px;
+    color: var(--aditamil-text);
+    line-height: 1.5;
+}
+
+.aditamil-copy {
+    background: rgba(234, 88, 12, 0.15);
+    border: 1px solid rgba(234, 88, 12, 0.4);
+    color: #f8fafc;
+    padding: 6px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.aditamil-notice,
+.aditamil-empty {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(234, 88, 12, 0.08);
+    border: 1px dashed rgba(234, 88, 12, 0.35);
+    color: #f59e0b;
+    font-size: 13px;
+}
