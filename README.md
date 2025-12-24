@@ -195,7 +195,7 @@ Want to contribute? Here are some ideas:
 
 ## 📄 License
 
-MIT License - feel free to use this project for personal or commercial purposes!
+Apache-2.0 License - feel free to use this project for personal or commercial purposes!
 
 ## 🙏 Acknowledgments
 - **Tamil Language Community** - For preserving linguistic heritage
