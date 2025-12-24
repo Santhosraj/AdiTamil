@@ -4,7 +4,7 @@
 
 AdiTamil is an AI-powered etymology analyzer that identifies and explains words with Tamil origins in any text. Whether words came directly from Tamil or traveled through other languages like Portuguese, Dutch, or Arabic, AdiTamil traces their linguistic journey back to their Tamil roots.
 
-![AdiTamil Banner](https://img.shields.io/badge/Language-Tamil-orange) ![Powered by Gemini](https://img.shields.io/badge/Powered%20by-Google%20Gemini-blue) ![License](https://img.shields.io/badge/Apache2.0-license-green)
+ ![License](https://img.shields.io/badge/Apache2.0-license-green)
 
 ## ✨ Features
 
