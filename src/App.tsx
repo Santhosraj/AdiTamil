@@ -174,7 +174,15 @@ Include common words like: catamaran (கட்டுமரம்), curry (க�
                 {showSettings && (
                     <div className="bg-white rounded-xl shadow-lg p-6 mb-6 border-2 border-orange-200">
                         <h3 className="text-lg font-bold text-orange-900 mb-3">⚙️ API Settings</h3>
-                        <div className="space-y-3">
+                        
+                        {/* FIX: Wrapped in <form> to resolve password field warning */}
+                        <form
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                setShowSettings(false);
+                            }}
+                            className="space-y-3"
+                        >
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-2">
                                     Google Gemini API Key
@@ -191,12 +199,12 @@ Include common words like: catamaran (கட்டுமரம்), curry (க�
                                 </p>
                             </div>
                             <button
-                                onClick={() => setShowSettings(false)}
+                                type="submit"
                                 className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
                             >
                                 Save & Close
                             </button>
-                        </div>
+                        </form>
                     </div>
                 )}
 
